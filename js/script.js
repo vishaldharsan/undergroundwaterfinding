@@ -177,9 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if(tamil){
 
-            document.querySelector(".hero-content h1").innerHTML="பாரம்பரிய நிலத்தடி நீர் கண்டறிதல்";
+            document.querySelector(".hero-content h1").innerHTML="பாரம்பரிய நிலத்தடி நீர் கண்டறிதல் மற்றும் வாஸ்து ஆலோசனை";
 
-            document.querySelector(".hero-content h2").innerHTML="LSVS நிலத்தடி நீர் கண்டறிதல்";
+            document.querySelector(".hero-content h2").innerHTML="நம்பிக்கைக்குரிய பாரம்பரிய முறை";
 
             document.querySelector(".hero-content p").innerHTML="20+ ஆண்டுகள் அனுபவம் • தேங்காய் மூலம் தண்ணீர் கண்டறிதல் • வாஸ்து ஆலோசனை";
 
@@ -189,9 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         else{
 
-            document.querySelector(".hero-content h1").innerHTML="Traditional Underground Water Finding";
+            document.querySelector(".hero-content h1").innerHTML="Traditional Underground Water Finding and Vasthu Consultation";
 
-            document.querySelector(".hero-content h2").innerHTML="LSVS Underground Water Finding";
+            document.querySelector(".hero-content h2").innerHTML="Trusted Traditional Method";
 
             document.querySelector(".hero-content p").innerHTML="20+ Years of Experience in Traditional Coconut Water Finding & Vasthu Consultation";
 
