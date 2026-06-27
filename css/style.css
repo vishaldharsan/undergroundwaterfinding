@@ -1,7 +1,7 @@
-/* ==========================================
+/* ===========================
    LSVS Underground Water Finding
-   Premium Responsive CSS - Part 1
-========================================== */
+   Premium Responsive CSS
+=========================== */
 
 *{
     margin:0;
@@ -12,7 +12,7 @@
 }
 
 body{
-    background:#f8faf8;
+    background:#f5f7f2;
     color:#222;
     overflow-x:hidden;
 }
@@ -23,13 +23,13 @@ body{
     width:10px;
 }
 
-::-webkit-scrollbar-thumb{
-    background:#0d7c42;
-    border-radius:10px;
+::-webkit-scrollbar-track{
+    background:#ddd;
 }
 
-::-webkit-scrollbar-track{
-    background:#eee;
+::-webkit-scrollbar-thumb{
+    background:#0d7c42;
+    border-radius:20px;
 }
 
 /* Loader */
@@ -42,24 +42,30 @@ body{
     justify-content:center;
     align-items:center;
     z-index:99999;
+    transition:.5s;
 }
 
 .loader-circle{
     width:70px;
     height:70px;
-    border:6px solid #ddd;
-    border-top:6px solid #0d7c42;
+    border:7px solid #ddd;
+    border-top:7px solid #0d7c42;
     border-radius:50%;
     animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
+
+100%{
+
+transform:rotate(360deg);
+
 }
 
-/* HEADER */
+}
+/* ===========================
+   HEADER
+=========================== */
 
 header{
     position:fixed;
@@ -67,14 +73,19 @@ header{
     left:0;
     width:100%;
     height:80px;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(15px);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
     padding:0 5%;
-    z-index:9999;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:9999;
+    transition:.3s;
+}
+
+header.sticky{
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 /* Logo */
@@ -86,25 +97,30 @@ header{
 }
 
 .logo-img{
-    width:60px;
-    height:60px;
+    width:65px;
+    height:65px;
     border-radius:50%;
     object-fit:cover;
+    border:3px solid #0d7c42;
 }
 
 .coconut-img{
-    width:50px;
+    width:55px;
+    height:55px;
+    object-fit:contain;
     animation:float 3s ease-in-out infinite;
 }
 
 .logo-text h2{
     color:#0d7c42;
     font-size:28px;
+    font-weight:800;
 }
 
 .logo-text span{
     color:#b8860b;
     font-size:13px;
+    font-weight:600;
 }
 
 /* Right Side */
@@ -115,40 +131,58 @@ header{
     gap:12px;
 }
 
-/* Language */
+/* Tamil Button */
 
 .language button{
+    padding:10px 18px;
     background:#0d7c42;
     color:#fff;
     border:none;
-    padding:10px 16px;
     border-radius:30px;
     cursor:pointer;
+    font-size:14px;
     font-weight:600;
+    transition:.3s;
 }
 
-/* Hamburger */
+.language button:hover{
+    background:#096536;
+}
+
+/* Menu Icon */
 
 .menu-toggle{
     display:none;
-    background:none;
+    width:45px;
+    height:45px;
     border:none;
+    background:none;
+    cursor:pointer;
     font-size:28px;
     color:#0d7c42;
-    cursor:pointer;
+    justify-content:center;
+    align-items:center;
 }
 
 /* Navigation */
 
+nav{
+    margin-left:auto;
+}
+
 nav ul{
     display:flex;
     list-style:none;
-    gap:35px;
+    gap:30px;
+}
+
+nav ul li{
+    position:relative;
 }
 
 nav ul li a{
-    text-decoration:none;
     color:#222;
+    text-decoration:none;
     font-weight:600;
     transition:.3s;
 }
@@ -157,64 +191,104 @@ nav ul li a:hover{
     color:#0d7c42;
 }
 
-/* Hero */
+nav ul li a.active{
+    color:#0d7c42;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+/* ===========================
+   HERO SECTION
+=========================== */
 
 .hero{
+    position:relative;
+    width:100%;
     height:100vh;
     background:url("../images/hero.jpg") center center/cover no-repeat;
-    position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    overflow:hidden;
 }
 
 .overlay{
     position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.55);
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.45)
+    );
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    color:#fff;
-    max-width:900px;
     width:90%;
+    max-width:950px;
+    color:#fff;
+    animation:fadeUp 1.2s ease;
 }
 
 .hero-content h1{
     font-size:58px;
-    margin-bottom:20px;
+    font-weight:800;
+    margin-bottom:15px;
+    line-height:1.2;
+    text-shadow:0 3px 10px rgba(0,0,0,.5);
 }
 
 .hero-content h2{
     font-size:36px;
     color:#FFD54F;
     margin-bottom:20px;
+    font-weight:700;
 }
 
 .hero-content p{
     font-size:22px;
-    margin-bottom:35px;
     line-height:1.8;
+    margin-bottom:35px;
+    color:#f8f8f8;
 }
+
+/* Hero Buttons */
 
 .hero-buttons{
     display:flex;
     justify-content:center;
+    align-items:center;
     gap:20px;
     flex-wrap:wrap;
 }
 
 .call-btn,
 .whatsapp-btn{
-    padding:18px 35px;
+    padding:18px 40px;
     border-radius:50px;
     text-decoration:none;
-    color:#fff;
+    font-size:18px;
     font-weight:700;
-    transition:.3s;
+    color:#fff;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 .call-btn{
@@ -225,25 +299,37 @@ nav ul li a:hover{
     background:#25D366;
 }
 
-.call-btn:hover,
-.whatsapp-btn:hover{
+.call-btn:hover{
+    background:#096536;
     transform:translateY(-5px);
 }
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
+.whatsapp-btn:hover{
+    background:#20ba5a;
+    transform:translateY(-5px);
+}
+
+/* Hero Animation */
+
+@keyframes fadeUp{
+
+from{
+    opacity:0;
+    transform:translateY(60px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
 }
 /* ==========================================
-   PART 2 - SECTIONS
-==========================================*/
+   ABOUT SECTION
+========================================== */
 
 section{
-    padding:100px 8%;
+    padding:90px 8%;
 }
 
 section h2{
@@ -251,13 +337,11 @@ section h2{
     font-size:42px;
     color:#0d7c42;
     margin-bottom:35px;
-    font-weight:700;
+    font-weight:800;
 }
 
-/* ABOUT */
-
 .about{
-    background:#fff;
+    background:#ffffff;
     text-align:center;
 }
 
@@ -265,38 +349,42 @@ section h2{
     max-width:900px;
     margin:auto;
     font-size:20px;
-    line-height:1.8;
+    line-height:1.9;
     color:#555;
 }
 
-/* SERVICES */
+/* ==========================================
+   SERVICES
+========================================== */
 
 .services{
-    background:#f8faf8;
+    background:#f7faf8;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
     margin-top:40px;
 }
 
 .card{
     background:#fff;
-    border-radius:20px;
+    border-radius:25px;
     padding:40px 30px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.4s;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 }
 
 .card i{
-    font-size:60px;
+    font-size:70px;
     color:#0d7c42;
     margin-bottom:20px;
 }
@@ -308,38 +396,43 @@ section h2{
 
 .card p{
     color:#666;
+    font-size:18px;
     line-height:1.7;
 }
 
-/* SERVICE AREAS */
+/* ==========================================
+   SERVICE AREAS
+========================================== */
 
 .areas{
-    background:#fff;
+    background:#ffffff;
 }
 
 .area-list{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
 .area-list div{
-    background:#0d7c42;
+    background:linear-gradient(135deg,#0d7c42,#0b5f34);
     color:#fff;
     padding:25px;
-    border-radius:15px;
+    border-radius:18px;
     text-align:center;
     font-size:20px;
-    font-weight:600;
+    font-weight:700;
     transition:.3s;
 }
 
 .area-list div:hover{
-    transform:translateY(-5px);
-    background:#096536;
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
 }
 
-/* TRUST */
+/* ==========================================
+   TRUST SECTION
+========================================== */
 
 .trust{
     background:#eef8ef;
@@ -353,12 +446,13 @@ section h2{
     padding:40px;
     border-radius:20px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .counter h2{
     font-size:55px;
     color:#0d7c42;
+    margin-bottom:10px;
 }
 
 .counter p{
@@ -366,7 +460,9 @@ section h2{
     color:#666;
 }
 
-/* REVIEWS */
+/* ==========================================
+   REVIEWS
+========================================== */
 
 #reviews{
     background:#fff;
@@ -374,14 +470,16 @@ section h2{
 }
 
 #reviews p{
-    font-size:20px;
     color:#666;
+    font-size:20px;
+    line-height:1.8;
 }
-
-/* CONTACT */
+/* ==========================================
+   CONTACT SECTION
+========================================== */
 
 #contact{
-    background:#0d7c42;
+    background:linear-gradient(135deg,#0d7c42,#064d28);
     color:#fff;
     text-align:center;
 }
@@ -392,101 +490,171 @@ section h2{
 
 #contact p{
     font-size:20px;
-    margin:15px 0;
+    margin:18px 0;
+    line-height:1.8;
 }
 
+#contact i{
+    color:#FFD54F;
+    margin-right:10px;
+}
+
+/* Contact Buttons */
+
 .contact-buttons{
-    margin-top:30px;
     display:flex;
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
+    margin-top:35px;
 }
 
 .contact-buttons a{
     background:#fff;
     color:#0d7c42;
-    padding:16px 35px;
     text-decoration:none;
+    padding:16px 35px;
     border-radius:50px;
     font-weight:700;
-    transition:.3s;
+    font-size:17px;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
 .contact-buttons a:hover{
-    transform:translateY(-5px);
+    background:#FFD54F;
+    color:#000;
+    transform:translateY(-6px);
 }
+
 /* ==========================================
-   PART 3 - FOOTER + MOBILE RESPONSIVE
+   FLOATING BUTTONS
 ========================================== */
-
-/* Footer */
-
-footer{
-    background:#062d17;
-    color:#fff;
-    text-align:center;
-    padding:25px;
-    font-size:16px;
-}
-
-/* Floating Buttons */
 
 .floating-call,
 .floating-whatsapp{
+
     position:fixed;
+
     right:20px;
+
     width:60px;
+
     height:60px;
+
     border-radius:50%;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    color:#fff;
+
     text-decoration:none;
+
+    color:#fff;
+
     font-size:28px;
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-    z-index:999;
-    transition:.3s;
+
+    z-index:9999;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
 }
 
 .floating-call{
-    bottom:95px;
+
+    bottom:100px;
+
     background:#0d7c42;
+
 }
 
 .floating-whatsapp{
-    bottom:20px;
+
+    bottom:25px;
+
     background:#25D366;
+
 }
 
 .floating-call:hover,
 .floating-whatsapp:hover{
-    transform:scale(1.1);
+
+    transform:scale(1.12);
+
 }
 
-/* ===========================
-      TABLET
-=========================== */
+/* ==========================================
+   FOOTER
+========================================== */
 
-@media (max-width:992px){
+footer{
 
-header{
-    padding:12px 20px;
+    background:#042714;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 15px;
+
 }
 
-.logo-text span{
+footer p{
+
+    font-size:16px;
+
+    letter-spacing:.5px;
+
+}
+
+/* ==========================================
+   SMALL ANIMATIONS
+========================================== */
+
+.card,
+.area-list div,
+.counter,
+.contact-buttons a{
+
+    transition:.35s ease;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE
+========================================== */
+
+/* Desktop */
+
+@media (min-width:769px){
+
+.menu-toggle{
     display:none;
 }
 
-.logo-img{
-    width:55px;
-    height:55px;
+nav{
+    display:block !important;
+    position:static;
+    max-height:none;
+    overflow:visible;
+    background:transparent;
+    box-shadow:none;
 }
 
-.coconut-img{
-    width:45px;
 }
+
+/* Tablet */
+
+@media (max-width:992px){
 
 .hero-content h1{
     font-size:42px;
@@ -500,11 +668,13 @@ header{
     font-size:18px;
 }
 
+.logo-text span{
+    display:none;
 }
 
-/* ===========================
-      MOBILE
-=========================== */
+}
+
+/* Mobile */
 
 @media (max-width:768px){
 
@@ -516,9 +686,9 @@ header{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
+
+    align-items:center;
 
 }
 
@@ -530,7 +700,7 @@ header{
 
     align-items:center;
 
-    gap:8px;
+    gap:10px;
 
 }
 
@@ -560,15 +730,13 @@ header{
 
 }
 
-/* Right Side */
-
 .header-right{
 
     display:flex;
 
     align-items:center;
 
-    gap:8px;
+    gap:10px;
 
 }
 
@@ -578,23 +746,37 @@ header{
 
     font-size:12px;
 
-}
+    border-radius:20px;
 
-/* Hamburger */
+}
 
 .menu-toggle{
 
-    display:block;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:none;
+
+    color:#0d7c42;
 
     font-size:28px;
 
+    cursor:pointer;
+
 }
 
-/* Hide Menu */
+/* Navigation */
 
 nav{
-
-    display:none;
 
     position:fixed;
 
@@ -606,13 +788,21 @@ nav{
 
     background:#fff;
 
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
     box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+    z-index:9998;
 
 }
 
 nav.active{
 
-    display:block;
+    max-height:500px;
 
 }
 
@@ -622,13 +812,17 @@ nav ul{
 
     flex-direction:column;
 
-    padding:20px;
+    list-style:none;
 
-    gap:0;
+    margin:0;
+
+    padding:0;
 
 }
 
 nav ul li{
+
+    width:100%;
 
     border-bottom:1px solid #eee;
 
@@ -644,7 +838,9 @@ nav ul li a{
 
     display:block;
 
-    padding:15px;
+    text-align:center;
+
+    padding:18px;
 
     font-size:18px;
 
@@ -660,15 +856,21 @@ nav ul li a{
 
 }
 
+.hero-content{
+
+    width:92%;
+
+}
+
 .hero-content h1{
 
-    font-size:32px;
+    font-size:30px;
 
 }
 
 .hero-content h2{
 
-    font-size:24px;
+    font-size:23px;
 
 }
 
@@ -684,16 +886,14 @@ nav ul li a{
 
     flex-direction:column;
 
-    align-items:center;
+    gap:15px;
 
 }
 
 .call-btn,
 .whatsapp-btn{
 
-    width:90%;
-
-    text-align:center;
+    width:100%;
 
 }
 
@@ -717,18 +917,8 @@ section h2{
 
 }
 
-.cards{
-
-    grid-template-columns:1fr;
-
-}
-
-.area-list{
-
-    grid-template-columns:1fr;
-
-}
-
+.cards,
+.area-list,
 .trust{
 
     grid-template-columns:1fr;
@@ -757,26 +947,6 @@ section h2{
     height:55px;
 
     font-size:24px;
-
-}
-
-}
-
-/* Animation */
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
 
 }
 
