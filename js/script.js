@@ -292,5 +292,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
+    /* =========================
+   Mobile Menu
+========================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+if (menuToggle && nav) {
+
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+
+    // Close the menu when a navigation link is clicked
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("active");
+        });
+    });
+
+}
 
 });
