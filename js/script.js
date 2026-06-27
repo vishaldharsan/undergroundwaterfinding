@@ -300,10 +300,25 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 
 if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function(){
 
-    menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-    });
+    nav.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if(nav.classList.contains("active")){
+
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+
+    }else{
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    }
+
+});
 
     // Close the menu when a navigation link is clicked
     document.querySelectorAll("nav a").forEach(link => {
