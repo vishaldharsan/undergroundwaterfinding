@@ -742,3 +742,175 @@ font-size:18px;
     }
 
 }
+/* ===========================================
+   MOBILE HEADER FIX
+   Paste this at the END of style.css
+=========================================== */
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:28px;
+    color:#0d7c42;
+    cursor:pointer;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* Desktop */
+@media (min-width:769px){
+
+    .menu-toggle{
+        display:none;
+    }
+
+    nav{
+        display:block !important;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    header{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 15px;
+        z-index:9999;
+    }
+
+    .logo{
+        display:flex;
+        align-items:center;
+        gap:8px;
+        flex:1;
+    }
+
+    .logo-img{
+        width:45px;
+        height:45px;
+        object-fit:cover;
+    }
+
+    .coconut-img{
+        display:none;
+    }
+
+    .logo-text h2{
+        font-size:22px;
+        margin:0;
+    }
+
+    .logo-text span{
+        display:none;
+    }
+
+    .header-right{
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
+
+    .language{
+        display:block;
+    }
+
+    .language button{
+        padding:8px 12px;
+        font-size:13px;
+        border-radius:20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#fff;
+        box-shadow:0 5px 20px rgba(0,0,0,.15);
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav ul{
+        display:flex;
+        flex-direction:column;
+        gap:0;
+        padding:15px;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+        padding:12px 0;
+    }
+
+    nav ul li a{
+        display:block;
+        font-size:18px;
+    }
+
+    .hero{
+        margin-top:75px;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .hero-content h2{
+        font-size:26px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+        line-height:1.6;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .call-btn,
+    .whatsapp-btn{
+        width:90%;
+        text-align:center;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .area-list{
+        grid-template-columns:1fr;
+    }
+
+    .trust{
+        grid-template-columns:1fr;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+}
