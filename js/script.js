@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.querySelector(".hero-content h1").innerHTML="பாரம்பரிய நிலத்தடி நீர் கண்டறிதல் மற்றும் வாஸ்து ஆலோசனை";
 
-            document.querySelector(".hero-content h2").innerHTML="நம்பிக்கைக்குரிய பாரம்பரிய முறை";
+            document.querySelector(".hero-content h2").innerHTML="40,000-க்கும் மேற்பட்ட வாடிக்கையாளர்களின் நம்பிக்கை";
 
             document.querySelector(".hero-content p").innerHTML="20+ ஆண்டுகள் அனுபவம் • தேங்காய் மூலம் தண்ணீர் கண்டறிதல் • வாஸ்து ஆலோசனை";
 
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.querySelector(".hero-content h1").innerHTML="Traditional Underground Water Finding and Vasthu Consultation";
 
-            document.querySelector(".hero-content h2").innerHTML="Trusted Traditional Method";
+            document.querySelector(".hero-content h2").innerHTML="More than 40,000 satisfied customers";
 
             document.querySelector(".hero-content p").innerHTML="20+ Years of Experience in Traditional Coconut Water Finding & Vasthu Consultation";
 
